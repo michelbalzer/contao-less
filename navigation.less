@@ -1,0 +1,31 @@
+// remove all margings and paddings from navigation lists
+
+nav, .mod_sitemap, .mod_newsmenu {
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.mod_navigation {
+  ul{}
+  li {}
+  a {
+    &.active {}
+    &.trail {}
+  }
+  span {
+    &.active {}
+    &.trail {}
+  }
+  a, span {
+    &.active {}
+    &.trail {}
+  }
+  
+  .level_1 > {} // only apply to direct child of level_1
+  .level_2 > {} // only apply to direct child of level_2
+  .level_3 > {} only apply to direct child of level_3, and so on …
+}
+
+// for news menu see news.less
