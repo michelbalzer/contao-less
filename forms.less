@@ -4,43 +4,77 @@ form {
 
   fieldset {}
 
-  textarea {}
-
-  label, .text, textarea {}
-  
-  label {
-    &.mandatory {}
-    .mandatory {}
+  textarea {
+    resize: vertical;
   }
-  
-  .text, textarea, .captcha {}
+
+  label, .text, textarea {
+    display: block;
+    width: 100%;
+  }
+
+  label {
+    &.mandatory { // the label itself
+      font-weight: bold;
+    }
+    .mandatory { // the star (*) in the label
+      margin-left: .25em;
+    }
+  }
+
+  .text, textarea, .captcha { // text input fields
+    padding: .25em 2%;
+  }
 
   select {}
-  
+
+  // checkbox and radio containers
+
   .checkbox_container {
     fieldset {}
     legend {}
-    label, input {}
+    label, input {
+      display: inline;
+    }
   }
-  
+
   .radio_container {
     fieldset {}
-    label, input {}
+    legend {}
+    label, input {
+      display: inline;
+    }
   }
-  
-  .submit_container {}
-  
-  .submit {}
-  
-  p.error {}
-  
-  .explanation {}
-  
-  input.error {}
-  
+
+  // Errors
+
+  p.error {
+    font-weight: bold;
+    color: @colorError;
+  }
+
+  input.error {
+    border: 1px solid @colorError;
+  }
+
   label.error {}
 
-  input.captcha {}
-  
+  .explanation {}
+
+  // Captcha
+
+  input.captcha {
+    width: 3em;
+    text-align: center;
+  }
+
   .captcha_text {}
+
+  // Submit
+
+  .submit_container {
+    clear: both;
+  }
+
+  .submit {}
 }
